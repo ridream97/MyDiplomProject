@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = "Admin";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florí</title>
+
+    @Styles.Render("~/Content/admin.css")
+
+    @Scripts.Render("~/bundles/modernizr")
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+
+
+<body>
+    @Html.Partial("_NavbarAdmin")
+
+
+    <div class="container">
+
+    <div class="row">
+        <div class="col-sm-6" style="background-color:lavender;">
+            <img src="~/Content/Images/8.jpg" class="" style="width:700px;height:300px; margin-left:-15px"/>
+        </div>
+        <div class="col-lg-6" style="background-color:lavenderblush !important;">
+            <p> @Html.ActionLink("Bouquets", "Index", "Bouquets", "", new { @class = "btn text-center", @style = "font-size:40px; margin:0px 0px 100px -15px;padding-top:100px" })</p>
+        </div>
+    </div>
+        
+    
+        
+        
+        <div class="row">
+            <div class="col-lg-6 "  style="background-color:lavender !important;">
+                <p> @Html.ActionLink("Compositions", "Index", "Compositions", "", new { @class = "btn text-center", @style="font-size:40px; margin:0px 100px 100px -15px;padding-top:100px"})</p>
+            </div>
+            <div class="img col-sm-6 ">
+                
+            </div>
+        </div>
+
+
+    </div>
+
+   
+
+
+</body>
+</html>
+
+@*<script>
+        $(document).ready(function () {
+            $("#content div").hide(); // Скрываем содержание
+            $("#tabs li:first").attr("id", "current"); // Активируем первую закладку
+            $("#content div:first").fadeIn(); // Выводим содержание
+
+            $('#tabs a').click(function (e) {
+                e.preventDefault();
+                $("#content div").hide(); //Скрыть все сожержание
+                $("#tabs li").attr("id", ""); //Сброс ID
+                $(this).parent().attr("id", "current"); // Активируем закладку
+                $('#' + $(this).attr('title')).fadeIn(); // Выводим содержание текущей закладки
+            });
+        });
+    </script>*@
+
+
+
+@*<div class="col-xs-3">
+        @Html.ActionLink("Add Bouquet", "Create", "Bouquets", "", new { @class = "w3-btn w3-round w3-blue" })
+
+    </div>
+    <div class="col-xs-3">
+        @Html.ActionLink("Add Composition", "Create", "Compositions", "", new { @class = "w3-btn w3-round w3-indigo" })
+
+    </div>
+    <br>
+    <br>
+    <div class="col-xs-3">
+        @Html.ActionLink("Show Bouquets", "Index", "Bouquets", "", new { @class = "w3-btn w3-round w3-blue" })
+
+    </div>
+    <div class="col-xs-3">
+        @Html.ActionLink("Show Compositions", "Index", "Compositions", "", new { @class = "w3-btn w3-round w3-indigo" })
+
+    </div>*@
+
+
+@*<ul class="nav nav-tabs ">
+        <li class="active"><a data-toggle="tab" href="#menu1">Bouquets</a></li>
+        <li><a data-toggle="tab" href="#menu2">Compositions</a></li>
+        <li><a data-toggle="tab" href="#menu3">Clients</a></li>
+    </ul>
+
+    <div class="tab-content">
+        <div id="menu1" class="tab-pane fade in active">
+            @Html.Partial("_BouquetPartial")
+
+        </div>
+
+
+        <div id="menu2" class="tab-pane fade">
+            @Html.Partial("_CompPartial")
+
+
+        </div>
+
+        <div id="menu3" class="tab-pane fade">
+
+        </div>
+
+        </div>*@

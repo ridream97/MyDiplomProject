@@ -1,0 +1,92 @@
+﻿@model FloriProject.Data.Composition
+
+@{
+    ViewBag.Title = "Create";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florí</title>
+
+    @Styles.Render("~/Content/admin.css")
+
+    @Scripts.Render("~/bundles/modernizr")
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="navcol">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <i>
+                    @Html.ActionLink("Florí", "HomePage", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </i>
+
+            </div>
+            <div class="collapse navbar-collapse " id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    @Html.ActionLink("Create Composition", "Create", "Compositions")
+                    @Html.ActionLink("Back to Composition List", "Index", "Compositions")
+                    @Html.ActionLink("Admin", "Admin", "Home")
+                    @Html.ActionLink("Bouquets", "Bouquets", "Home")
+                    @Html.ActionLink("Compositions", "Compositions", "Home")
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+        <div class="container">
+
+
+            @using (@Html.BeginForm("CreateComposition", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.ValidationSummary(true)
+                <div class="container_small">
+                    <h1 center>Add a Composition</h1>
+                    <hr />
+
+                    <label for="name" class="form-label">Name</label>
+                    @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-input w-input", @placeholder = "Enter the name" } })
+                    @Html.ValidationMessageFor(model => model.Name)
+
+
+                    <label for="name" class="form-label">Image</label>
+                    <div class="dada">
+                        <label for="myfile" class="chous">Choose a file</label>
+                        <input type="file" class="my" id="myfile" name="uploadImage" />
+                    </div>
+
+                    <script>
+                        $('.my').change(function () {
+                            if ($(this).val() != '') $(this).prev().text('Your File is here' /*+ $(this)[0].files.length*/);
+                            else $(this).prev().text('Choose a file');
+                        });;
+                    </script>
+
+
+                    <label for="Message">Description</label>
+                    @Html.EditorFor(model => model.Description, new { htmlAttributes = new { @class = "form-input message w-input", @style = "height:150px;", placeholder = "Please enter the description here" } })
+                    @Html.ValidationMessageFor(model => model.Description)
+
+                    <input type="submit" value="Submit" data-wait="Please wait..." class="chous col-lg-12" style="margin-top:20px">
+
+
+                </div>
+            }
+        </div>
+    </body>
+</html>

@@ -14,17 +14,34 @@ namespace FloriProject.Web
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
 
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.
+            // Используйте версию Modernizr для разработчиков, чтобы учиться работать. Когда вы будете готовы перейти к работе,
+            // готово к выпуску, используйте средство сборки по адресу https://modernizr.com, чтобы выбрать только необходимые тесты.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                       "~/Scripts/bootstrap.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include(
+            bundles.Add(new StyleBundle("~/Content/site.css").Include(
                       "~/Content/bootstrap.css",
+                      "~/Content/navbar.css",
                       "~/Content/site.css"));
+            bundles.Add(new StyleBundle("~/Content/bouquet.css").Include(
+                      "~/Content/bootstrap.css",
+                      "~/Content/navbar.css",
+                      "~/Content/bouquet.css"));
+            bundles.Add(new StyleBundle("~/Content/composition.css").Include(
+                      "~/Content/bootstrap.css",
+                      "~/Content/navbar.css",
+                      "~/Content/composition.css"));
+            bundles.Add(new StyleBundle("~/Content/contact.css").Include(
+                      "~/Content/bootstrap.css",
+                      "~/Content/navbar.css",
+                      "~/Content/contact.css"));
+            bundles.Add(new StyleBundle("~/Content/admin.css").Include(
+                      "~/Content/bootstrap.css",
+                      "~/Content/addbouquets.css",
+                      "~/Content/admin.css"));
         }
     }
 }

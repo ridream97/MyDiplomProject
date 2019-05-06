@@ -1,0 +1,46 @@
+﻿
+.navbar {
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.28);
+    color: black !important;
+    min-height: 80px !important;
+    /*position: fixed;
+    top: 0;
+    width: 100%;*/
+}
+
+.navbar a {
+    float: left;
+    text-align: center;
+    padding: 30px 26px !important;
+    text-decoration: none;
+    font-size: 14px;
+    color: rgba(207, 214, 224, 0.89);
+}
+
+.navbar-brand {
+    height: 80px !important;
+    font-size: 30px !important;
+}
+
+.navbar a:hover {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    color: rgba(207, 214, 224, 0.89);
+}
+
+.navbar .icon-bar {
+    background-color: rgba(207, 214, 224, 0.89) !important;
+}
+
+.navbar-collapse {
+    color: black;
+    padding-left: 30px;
+}
+
+.navbar-toggle {
+    height: 80px;
+}
+
+.logo {
+    font-size: 30px;
+}

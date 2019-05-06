@@ -1,0 +1,194 @@
+﻿
+body {
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.bg-img {
+    background-image: url("Images/a.jpg");
+    min-height: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+/********************* CONTENT ***********************/
+
+.chous {
+    width: 150px;
+    height: 50px;
+    border-radius: 4px;
+    text-align: center;
+
+    padding: 2px;
+    cursor: pointer;
+    font: 14px/50px Tahoma;
+    background-color: cornflowerblue;
+    color: aliceblue;
+    text-align: center;
+    
+}
+
+/*.chous:hover {
+    color: white !important;
+    background-position: bottom left;
+}*/
+
+.my {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+
+
+
+
+
+/*********************  ***********************/
+
+.col-sm-6 {
+    height: 300px;
+    margin-bottom: 20px;
+    background-image: url("Images/1.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.col-lg-6 {
+    height: 300px;
+    margin-bottom: 20px;
+}
+
+.btn{
+    width:585px;
+    height:300px;
+    text-align:center;
+    font-size:large;
+}
+
+
+/********************* NAVBAR ***********************/
+/* The navbar */
+.navbar {
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.28);
+    color: black !important;
+    min-height: 80px !important;
+}
+    /* Navbar links */
+    .navbar a {
+        float: left;
+        text-align: center;
+        padding: 30px 26px !important;
+        text-decoration: none !important;
+        font-size: 14px;
+        color: rgba(207, 214, 224, 0.89);
+    }
+
+.navbar-brand {
+    height: 80px !important;
+    font-size: 30px !important;
+}
+
+.navbar a:hover {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    color: rgba(207, 214, 224, 0.89);
+}
+
+.navbar .icon-bar {
+    background-color: rgba(207, 214, 224, 0.89) !important;
+}
+
+.navbar-collapse {
+    color: black;
+    padding-left: 30px;
+}
+
+.navbar-toggle {
+    height: 80px;
+}
+
+.logo {
+    font-size: 30px;
+}
+/********************* CONTENT ***********************/
+
+.container {
+    display: block;
+    width: 210%;
+    align-content: center;
+    border-radius: 5px;
+    /*background-color: #f2f2f2;*/
+    padding: 20px;
+    margin:20px;
+}
+
+.container_small{
+    padding: 20px;
+    margin:20px;
+    width:800px;
+}
+/**************************************/
+* {
+    box-sizing: border-box;
+}
+
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+}
+
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+
+
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+.form-control {
+    height: 200px;
+}
+
+.col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+}
+
+.col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+        width: 50%;
+        margin-top: 0;
+    }
+}

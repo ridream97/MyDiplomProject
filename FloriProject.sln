@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.438
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FloriProject.Web", "FloriProject.Web\FloriProject.Web.csproj", "{3A54353F-A931-49B8-BF63-DAE64425E778}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FloriProject.Data", "FloriProject.Data\FloriProject.Data.csproj", "{3DBCDA65-6202-48E8-B2D5-3271CD542985}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{3A54353F-A931-49B8-BF63-DAE64425E778}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3A54353F-A931-49B8-BF63-DAE64425E778}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3A54353F-A931-49B8-BF63-DAE64425E778}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3DBCDA65-6202-48E8-B2D5-3271CD542985}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3DBCDA65-6202-48E8-B2D5-3271CD542985}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3DBCDA65-6202-48E8-B2D5-3271CD542985}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3DBCDA65-6202-48E8-B2D5-3271CD542985}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

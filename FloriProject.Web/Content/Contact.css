@@ -1,0 +1,54 @@
+﻿
+body {
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.bg-img {
+    background-image: url("Images/s.jpg");
+    min-height: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/********************* CONTENT ***********************/
+
+.container {
+    display: block;
+    width: 200%;
+    height: 1000px;
+    /*background-color: rgba(46, 136, 255, 0.53);
+	border: 1px solid black;*/
+    align-content: center;
+}
+/* 1 BLOCK */
+.block1 {
+    height: 300px;
+    background-color: white;
+    margin: 40px 20px 20px 20px;
+}
+
+.quote {
+    font-family: "Times New Roman", Times, serif;
+    color: rgba(300, 300, 300, 0.83);
+    font-size: 200%;
+    /*color: rgba(52, 63, 134, 0.63);*/
+    text-align: center;
+}
+
+.quotesmall {
+    font-family: "Times New Roman", Times, serif;
+    /*color: rgba(300, 300, 300, 0.83);*/
+    font-size: 20%;
+    color: rgba(52, 63, 134, 0.63);
+    text-align: center;
+}
+
+.dquote {
+    margin-top: 150px;
+}
