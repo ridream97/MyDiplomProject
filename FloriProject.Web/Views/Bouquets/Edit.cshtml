@@ -73,8 +73,6 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.Photo, htmlAttributes: new { @class = "control-label col-md-2", @style = "text-align:left" })
                         <div class="col-md-10">
-                            @*<label for="myfile" class="chous">Choose a file</label>
-        @Html.TextBoxFor(model => model.NewPhoto, new { @type = "file", @class = "my" })*@
                             @Html.TextBoxFor(model => model.NewPhoto, new { @type = "file" })
                         </div>
                     </div>
