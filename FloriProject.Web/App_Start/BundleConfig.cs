@@ -42,6 +42,10 @@ namespace FloriProject.Web
                       "~/Content/bootstrap.css",
                       "~/Content/addbouquets.css",
                       "~/Content/admin.css"));
+            bundles.Add(new StyleBundle("~/Content/login.css").Include(
+               "~/Content/bootstrap.css",
+               "~/Content/addbouquets.css",
+               "~/Content/login.css"));
         }
     }
 }

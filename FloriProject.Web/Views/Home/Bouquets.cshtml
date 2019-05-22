@@ -22,6 +22,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
+
 </head>
 
 
@@ -50,7 +51,7 @@
                             </div>
                             <p><strong> @Html.DisplayFor(modelItem => item.Name)</strong></p>
 
-                            <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+                            @*<div id="modal01" class="w3-modal" onclick="this.style.display='none'">
                                 <img id="img1" class="w3-round w3-image" alt="Click off" style="width:500px;height:500px">
                             </div>
                             <script>
@@ -58,7 +59,7 @@
                                     document.getElementById("img1").src = document.getElementById("img").src;
                                     document.getElementById("modal01").style.display = "block";
                                 }
-                            </script>
+                            </script>*@
                         </div>
                     </div>
                 }

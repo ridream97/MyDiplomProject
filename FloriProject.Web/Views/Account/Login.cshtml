@@ -4,60 +4,201 @@
     ViewBag.Title = "Log in";
 }
 
-<h2>@ViewBag.Title.</h2>
-<div class="row">
-    <div class="col-md-8">
-        <section id="loginForm">
-            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-            {
-                @Html.AntiForgeryToken()
-                <h4>Use a local account to log in.</h4>
-                <hr />
-                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-                    </div>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florí</title>
+
+    @Styles.Render("~/Content/login.css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <script>
+
+        (function ($) {
+            "use strict";
+            /*==================================================================
+            [ Validate ]*/
+            var name = $('.validate-input input[name="name"]');
+            var email = $('.validate-input input[name="email"]');
+            var message = $('.validate-input textarea[name="message"]');
+
+
+            $('.validate-form').on('submit', function () {
+                var check = true;
+
+                if ($(name).val().trim() == '') {
+                    showValidate(name);
+                    check = false;
+                }
+
+
+                if ($(email).val().trim().match(/^([a-zA-Z0-9_\-\.]+)((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{1,5}|[0-9]{1,3})(\]?)$/) == null) {
+                    showValidate(email);
+                    check = false;
+                }
+
+                if ($(message).val().trim() == '') {
+                    showValidate(message);
+                    check = false;
+                }
+
+                return check;
+            });
+
+
+            $('.validate-form .input2').each(function () {
+                $(this).focus(function () {
+                    hideValidate(this);
+                });
+            });
+
+            function showValidate(input) {
+                var thisAlert = $(input).parent();
+
+                $(thisAlert).addClass('alert-validate');
+            }
+
+            function hideValidate(input) {
+                var thisAlert = $(input).parent();
+
+                $(thisAlert).removeClass('alert-validate');
+            }
+
+
+
+        })(jQuery);
+    </script>
+</head>
+
+<body>
+
+    @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="bg-contact2" style="background-image: url('images/bg-01.jpg');">
+            <div class="container-contact2">
+                <div class="wrap-contact2">
+                    <form class="contact2-form validate-form">
+                        <span class="contact2-form-title">
+                            Log In
+                        </span>
+
+                        <div class="wrap-input2 validate-input" data-validate="Valid email is required: ex@abc.xyz">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "input2 has-val" })
+                            <span class="focus-input2" data-placeholder="EMAIL"></span>
+                        </div>
+
+                        <div class="wrap-input2 validate-input" data-validate="Password is required">
+                            @Html.PasswordFor(m => m.Password, new { @class = "input2 has-val" })
+                            <span class="focus-input2" data-placeholder="PASSWORD"></span>
+                        </div>
+
+
+                        <div class="wrap-input2 validate-input" data-validate="Message is required">
+                            @Html.CheckBoxFor(m => m.RememberMe, new { @class = "input2 has-val", @style = "margin-left:0px" })
+                            <span class="focus-input2" data-placeholder="IF YOU WANT TO BE REMEMBERED, CLICK IT"></span>
+
+                        </div>
+                        <div class="container-contact2-form-btn ">
+                            <div class="wrap-contact2-form-btn">
+                                <div class="contact2-form-bgbtn"></div>
+                                <button class="contact2-form-btn ">
+                                    Log In
+                                </button>
+                            </div>
+                        </div>
+                        @Html.ActionLink("Register as a new user", "Register", "", new { @class = "contact2-form-btn" })
+                    </form>
                 </div>
-                <div class="form-group">
-                    @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-                    <div class="col-md-10">
-                        @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <div class="checkbox">
-                            @Html.CheckBoxFor(m => m.RememberMe)
-                            @Html.LabelFor(m => m.RememberMe)
+            </div>
+        </div>
+    }
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            @*@<div class="row">
+
+        <div class="col-md-8">
+            <section id="loginForm">
+                @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <h4>Use a local account to log in.</h4>
+                    <hr />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
                         </div>
                     </div>
-                </div>
-                <div class="form-group">
-                    <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Log in" class="btn btn-default" />
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
+                        <div class="col-md-10">
+                            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                            @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+                        </div>
                     </div>
-                </div>
-                <p>
-                    @Html.ActionLink("Register as a new user", "Register")
-                </p>
-                @* Enable this once you have account confirmation enabled for password reset functionality
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <div class="checkbox">
+                                @Html.CheckBoxFor(m => m.RememberMe)
+                                @Html.LabelFor(m => m.RememberMe)
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Log in" class="btn btn-default" />
+                        </div>
+                    </div>
                     <p>
-                        @Html.ActionLink("Forgot your password?", "ForgotPassword")
-                    </p>*@
-            }
-        </section>
-    </div>
-    @*<div class="col-md-4">
-        <section id="socialLoginForm">
-            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-        </section>
-    </div>*@
-</div>
+                        @Html.ActionLink("Register as a new user", "Register")
+                    </p>
+                    @* Enable this once you have account confirmation enabled for password reset functionality
+                                            <p>
+                                                @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                                            </p>
+                                    }
+                                </section>
+                            </div>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+                        </div>*@
+
+                    @section Scripts {
+                        @Scripts.Render("~/bundles/jqueryval")
+                    }
