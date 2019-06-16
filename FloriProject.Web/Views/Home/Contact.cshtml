@@ -1,4 +1,5 @@
-﻿
+﻿@model FloriProject.Data.Contact
+
 @{
     Layout = null;
 }
@@ -30,24 +31,51 @@
         </div>
     </div>
 
-
+   
 
     <div class="container" style="width:1000px;">
-        <div class="col-sm-6">
-            <div class="form-style-5">
-                <form>
-                    <fieldset>
-                        <legend><span class="number"></span> Type Your Message Here</legend>
-                        <input type="text" name="field1" placeholder="Your Name *">
-                        <input type="email" name="field2" placeholder="Your Email">
-                        <input type="tel" name="field3" placeholder="Your Phone Number">
-                        <textarea name="field4" placeholder="Your Message..."></textarea>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="col-sm-6">
+                <div class="form-style-5">
+                    <form>
+                        <fieldset>
+                            <legend><span class="number"></span> Type Your Message Here</legend>
+                            <input type="text" name="field1" placeholder="Your Name *">
 
-                    </fieldset>
-                    <input type="submit" value="Send" />
-                </form>
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+
+                            <input type="email" name="field2" placeholder="Your Email">
+
+                            @Html.EditorFor(model => model.Mail, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Mail, "", new { @class = "text-danger" })
+
+
+                            <input type="tel" name="field3" placeholder="Your Phone Number">
+
+                            @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+
+
+                            <textarea name="field4" placeholder="Your Message..."></textarea>
+                            @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+
+
+                        </fieldset>
+                        <input type="submit" value="Send" />
+                    </form>
+                </div>
             </div>
-        </div>
+        }
+
+
+
+
+
         <div class="col-sm-6">
             <div class="form-style-4">
                 <label class="label-info">Contact With:</label>
@@ -57,6 +85,7 @@
             </div>
         </div>
     </div>
+     
 </body>
 </html>
 

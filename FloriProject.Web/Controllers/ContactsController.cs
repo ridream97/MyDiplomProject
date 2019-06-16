@@ -22,19 +22,19 @@ namespace FloriProject.Web.Controllers
         }
 
         // GET: Contacts/Details/5
-        public ActionResult Details(int? id)
-        {
-            if (id == null)
-            {
-                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-            }
-            Contact contact = db.Contacts.Find(id);
-            if (contact == null)
-            {
-                return HttpNotFound();
-            }
-            return View(contact);
-        }
+        //public ActionResult Details(int? id)
+        //{
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+        //    Contact contact = db.Contacts.Find(id);
+        //    if (contact == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(contact);
+        //}
 
         // GET: Contacts/Create
         public ActionResult Create()
@@ -94,6 +94,8 @@ namespace FloriProject.Web.Controllers
         // POST: Contacts/Delete/5
         //[HttpPost, ActionName("Delete")]
         //[ValidateAntiForgeryToken]
+
+
         public ActionResult DeleteConfirmed(int id)
         {
             Contact contact = db.Contacts.Find(id);
