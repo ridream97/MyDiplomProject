@@ -204,7 +204,14 @@
     <Content Include="Content\Images\8.jpg" />
     <Content Include="Content\Images\a.jpg" />
     <Content Include="Content\Images\bg-01.jpg" />
+    <Content Include="Content\Images\email.svg" />
+    <Content Include="Content\Images\facebook.svg" />
+    <Content Include="Content\Images\insta.svg" />
+    <Content Include="Content\Images\map.svg" />
+    <Content Include="Content\Images\phone.svg" />
+    <Content Include="Content\Images\pinterest.svg" />
     <Content Include="Content\Images\s.jpg" />
+    <Content Include="Content\Images\twitter.svg" />
     <Content Include="Content\Login.css" />
     <Content Include="Content\Navbar.css" />
     <Content Include="favicon.ico" />

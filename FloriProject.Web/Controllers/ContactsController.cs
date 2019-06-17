@@ -53,7 +53,7 @@ namespace FloriProject.Web.Controllers
             {
                 db.Contacts.Add(contact);
                 db.SaveChanges();
-                return RedirectToAction("Contact");
+                return RedirectToAction("Create");
             }
 
             return View(contact);
@@ -96,7 +96,7 @@ namespace FloriProject.Web.Controllers
         //[ValidateAntiForgeryToken]
 
 
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult Delete(int id)
         {
             Contact contact = db.Contacts.Find(id);
             db.Contacts.Remove(contact);

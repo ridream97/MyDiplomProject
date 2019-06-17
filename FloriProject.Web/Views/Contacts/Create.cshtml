@@ -1,64 +1,120 @@
 ﻿@model FloriProject.Data.Contact
 
 @{
-    ViewBag.Title = "Create";
+    Layout = null;
 }
 
-<h2>Create</h2>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Florí</title>
+
+    @Styles.Render("~/Content/contact.css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
 
 
-@using (Html.BeginForm()) 
-{
-    @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Contact</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
-            </div>
+<body>
+    <div class="bg-img">
+        @Html.Partial("_Navbar")
+        <div class="dquote">
+            <h3 class="quote"><i></i></h3>
         </div>
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Mail, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Mail, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Mail, "", new { @class = "text-danger" })
+
+
+    <div class="container" style="width:1000px;">
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="col-sm-6">
+                <div class="form-style-5">
+                    <form>
+                        <fieldset>
+                            <legend><span class="number"></span> Type Your Message Here</legend>
+                            @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @placeholder = "Your Name *", @name = "field1", @type = "text" } })
+                            @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+
+                            @Html.EditorFor(model => model.Mail, new { htmlAttributes = new { @type = "email", @name = "field2", @placeholder = "Your Email" } })
+
+                            @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @type = "tel", @name = "field3", @placeholder = "Your Phone Number" } })
+
+                            @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @name = "field4", @placeholder = "Your Message..." } })
+                            @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
+
+                        </fieldset>
+                        <input type="submit" value="Send" />
+                    </form>
+                </div>
             </div>
-        </div>
+        }
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.Message, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.Message, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.Message, "", new { @class = "text-danger" })
-            </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+
+
+        <div class="col-sm-6">
+            <div class="form-style-4">
+                <div class="row">
+                    <img src="~/Content/Images/phone.svg">
+                    <label></label>
+
+                </div>
+                <div class="row">
+                    <img src="~/Content/Images/email.svg">
+
+                    <label></label>
+
+
+                </div>
+                <div class="row">
+                    <img src="~/Content/Images/facebook.svg">
+
+                    <label></label>
+
+                </div>
+                <div class="row">
+                    <img src="~/Content/Images/insta.svg">
+
+                    <label></label>
+
+                </div>
+                <div class="row">
+                    <img src="~/Content/Images/pinterest.svg">
+
+                    <label></label>
+
+                </div>
+                <div class="row">
+                    <img src="~/Content/Images/twitter.svg">
+
+                    <label></label>
+
+                </div>
+                <div class="row">
+                    <img src="~/Content/Images/map.svg">
+
+                    <label></label>
+
+                </div>
+                
+
+               
             </div>
         </div>
     </div>
-}
 
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+</body>
+</html>
 
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
-}
+
